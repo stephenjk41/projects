@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { FormControl } from '@angular/forms';
+import { ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,23 +9,28 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-hide = true;
-password: FormControl
-  constructor(public dialog: MatDialog) { 
-    this.password = new FormControl()
+  @ViewChild('canvas') canvas: ElementRef;
+  private context: CanvasRenderingContext2D;
+  constructor() { }
+
+  ngAfterViewInit() {
+    this.context = (this.canvas.nativeElement as HTMLCanvasElement).getContext('2d');
   }
 
-  onSubmit(){
-    console.log(this.password.value)
-    if(this.password.value == 'leak') {
-      const dialogRef = this.dialog.open(SuccessDialog, {
-        width: '40%',
-        height: '80%'
-      })
-    }
-      
+  private draw() {
+    this.context.font = "30px Arial";
+    this.context.textBaseline = 'middle';
+    this.context.textAlign = 'center';
+
+    const x = (this.canvas.nativeElement as HTMLCanvasElement).width / 2;
+    const y = (this.canvas.nativeElement as HTMLCanvasElement).height / 2;
+    this.context.fillText("@realappie", x, y);
   }
-// Set the date we're counting down to
+
+  open() {
+    window.open('https://github.com/realappie', '_blank')
+  }
+
 }
 
 @Component({
@@ -32,7 +38,18 @@ password: FormControl
   templateUrl: 'success.html',
 })
 export class SuccessDialog {
-  constructor(public dialogRef: MatDialogRef<SuccessDialog>){}
+  constructor(public dialogRef: MatDialogRef<SuccessDialog>) { }
+  onNoClick(): void {
+    this.dialogRef.close()
+  }
+}
+
+@Component({
+  selector: 'popup1',
+  templateUrl: 'popup1.html',
+})
+export class Popup1Dialog {
+  constructor(public dialogRef: MatDialogRef<Popup1Dialog>) { }
   onNoClick(): void {
     this.dialogRef.close()
   }

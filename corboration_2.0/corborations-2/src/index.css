@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'Arial';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+@font-face {
+  font-family: 'YEEZY';
+  src: local('YEEZY'), url(./fonts/vcr_osd_mono_1.001-webfont.woff) format('woff');
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

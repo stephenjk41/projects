@@ -1,0 +1,17 @@
+.color-nav {
+    background-color: black;
+    color: white;
+}
+
+.nav-drop {
+    color: white;
+    background-color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+a {
+    color: white;
+}

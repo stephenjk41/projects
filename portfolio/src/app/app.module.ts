@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent, SuccessDialog } from './components/navbar/navbar.component';
+import { NavbarComponent, SuccessDialog, Popup1Dialog } from './components/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, 
          MatButtonModule, 
@@ -23,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms'
   declarations: [
     AppComponent,
     NavbarComponent,
-    SuccessDialog
+    SuccessDialog,
+    Popup1Dialog
   ],
   imports: [
     BrowserModule,
@@ -43,8 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     MatIconModule,
     MatListModule
   ],
-  entryComponents: [SuccessDialog],
-  providers: [SuccessDialog],
+  entryComponents: [SuccessDialog, Popup1Dialog],
+  providers: [SuccessDialog, Popup1Dialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

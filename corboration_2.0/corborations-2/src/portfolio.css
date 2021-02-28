@@ -1,0 +1,28 @@
+.item {
+    margin: auto;
+    height: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+.car {
+height: 70vh;
+}
+
+.cover-art {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.cap {
+ margin: 0px;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: grey;
+}
